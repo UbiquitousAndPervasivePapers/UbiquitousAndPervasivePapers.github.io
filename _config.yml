@@ -1,0 +1,7 @@
+title: "Curated Paper List of Ubiquitous and Pervasive Computing Papers"
+theme: jekyll-theme-minimal
+
+collections:
+  papers:
+    output: true
+    sort_by: year    # default sorting
