@@ -33,6 +33,7 @@ const papers = [
       url: "{{ p.url }}",
       year: "{{ p.year }}",
       area: "{{ p.area | escape }}",
+      authors: "{{ p.authors | escape }}"
     },
   {% endfor %}
 ];
@@ -52,7 +53,7 @@ function render() {
 
   if (!groupByArea) {
     container.innerHTML = sorted.map(p =>
-      `<p><a href="${p.url}">${p.title}</a> (${p.year}) – ${p.area}</p>`
+      `<p><a href="${p.url}">${p.title}</a><br> ${p.authors} (${p.year})</p>`
     ).join("");
     return;
   }
@@ -67,7 +68,7 @@ function render() {
   container.innerHTML = Object.keys(grouped).map(area =>
     `<h2>${area}</h2>` +
     grouped[area].map(p =>
-      `<p><a href="${p.url}">${p.title}</a> (${p.year})</p>`
+      `<p><a href="${p.url}">${p.title}</a><br> (${p.year})</p>`
     ).join("")
   ).join("<br>");
 }
