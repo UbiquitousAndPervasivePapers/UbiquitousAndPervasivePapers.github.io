@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<h1>{{ page.title }}</h1>
+<p><strong>Authors:</strong> {{ page.authors }}</p>
+<p><strong>Area:</strong> {{ page.area }}</p>
+<p><strong>Year:</strong> {{ page.year }}</p>
+<p><strong>Venue:</strong> {{ page.venue }}</p>
+
+{% if page.pdf %}
+<p><a href="{{ page.pdf }}" target="_blank">Download PDF</a></p>
+{% endif %}
+
+<hr>
+
+<div>
+  {{ content }}
+</div>

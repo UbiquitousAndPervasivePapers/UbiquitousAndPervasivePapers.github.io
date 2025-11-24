@@ -1,0 +1,79 @@
+---
+layout: default
+title: Papers
+---
+
+<h1>Papers</h1>
+
+<label>
+  <input type="checkbox" id="groupByArea">
+  Group papers by area
+</label>
+
+<br><br>
+
+Sort by:
+<select id="sortSelect">
+  <option value="year">Year</option>
+  <option value="title">Title</option>
+</select>
+
+<hr>
+
+<div id="papers-container">
+  <!-- Will be filled by JS -->
+</div>
+
+<script>
+// Papers from Jekyll → JS
+const papers = [
+  {% for p in site.papers %}
+    {
+      title: "{{ p.title | escape }}",
+      url: "{{ p.url }}",
+      year: "{{ p.year }}",
+      area: "{{ p.area | escape }}",
+    },
+  {% endfor %}
+];
+
+function render() {
+  const container = document.getElementById("papers-container");
+  const groupByArea = document.getElementById("groupByArea").checked;
+  const sortBy = document.getElementById("sortSelect").value;
+
+  let sorted = [...papers];
+
+  if (sortBy === "year") {
+    sorted.sort((a, b) => Number(b.year) - Number(a.year));
+  } else if (sortBy === "title") {
+    sorted.sort((a, b) => a.title.localeCompare(b.title));
+  }
+
+  if (!groupByArea) {
+    container.innerHTML = sorted.map(p =>
+      `<p><a href="${p.url}">${p.title}</a> (${p.year}) – ${p.area}</p>`
+    ).join("");
+    return;
+  }
+
+  // Group by area
+  const grouped = {};
+  for (const p of sorted) {
+    if (!grouped[p.area]) grouped[p.area] = [];
+    grouped[p.area].push(p);
+  }
+
+  container.innerHTML = Object.keys(grouped).map(area =>
+    `<h2>${area}</h2>` +
+    grouped[area].map(p =>
+      `<p><a href="${p.url}">${p.title}</a> (${p.year})</p>`
+    ).join("")
+  ).join("<br>");
+}
+
+document.getElementById("groupByArea").addEventListener("change", render);
+document.getElementById("sortSelect").addEventListener("change", render);
+
+render();
+</script>

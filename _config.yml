@@ -1,7 +1,19 @@
-title: "Curated Paper List of Ubiquitous and Pervasive Computing Papers"
-theme: jekyll-theme-minimal
+title: Ubiquitous and Pervasive Computing Research Papers
+description: A curated paper list
 
+# Required for GitHub Pages remote themes
+theme: null
+
+# Optional but recommended
+plugins:
+  - jekyll-remote-theme
+
+# Jekyll settings
+markdown: kramdown
+highlighter: rouge
+
+# Your collections
 collections:
   papers:
     output: true
-    sort_by: year    # default sorting
+    permalink: /papers/:name
