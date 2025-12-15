@@ -3,7 +3,7 @@ layout: paper
 title: "Context-Aware Computing Applications"
 authors: Schilit et al.
 year: 1994
-area: Ubiquitous Computing
+area: Context Awareness
 venue: IEEE Workshop on Mobile Computing Systems and Applications (WMCSA) 
 pdf: https://ieeexplore.ieee.org/document/4624429
 ---
