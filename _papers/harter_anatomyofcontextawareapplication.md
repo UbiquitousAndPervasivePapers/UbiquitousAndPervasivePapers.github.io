@@ -3,7 +3,7 @@ layout: paper
 title: "The anatomy of a context-aware application"
 authors: Andy Harter et al.
 year: 1999
-area: Ubiquitous Computing
+area: Context Awareness
 venue: MOBICOM
 pdf: https://dl.acm.org/doi/10.1145/313451.313476
 ---
