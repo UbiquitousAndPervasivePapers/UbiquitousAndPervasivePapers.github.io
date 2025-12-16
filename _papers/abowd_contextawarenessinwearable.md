@@ -4,7 +4,7 @@ title: "Context-awareness in wearable and ubiquitous computing"
 authors: Abowd et al.
 year: 1998
 area: Context Awareness
-venue: Handheld and Ubiquitous Computing
+venue: Virtual Reality
 pdf: https://link.springer.com/article/10.1007/BF01408562
 ---
 
