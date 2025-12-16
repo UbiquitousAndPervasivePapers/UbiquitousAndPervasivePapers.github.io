@@ -1,0 +1,11 @@
+---
+layout: paper
+title: "Towards a Better Understanding of Context and Context-Awareness"
+authors: Abowd et al.
+year: 2001
+area: Context Awareness
+venue: Handheld and Ubiquitous Computing
+pdf: https://link.springer.com/chapter/10.1007/3-540-48157-5_29
+---
+
+Abstract: "When humans talk with humans, they are able to use implicit situational information, or context, to increase the conversational bandwidth. Unfortunately, this ability to convey ideas does not transfer well to humans interacting with computers. In traditional interactive computing, users have an impoverished mechanism for providing input to computers. By improving the computer’s access to context, we increase the richness of communication in human-computer interaction and make it possible to produce more useful computational services. The use of context is increasingly important in the fields of handheld and ubiquitous computing, where the user?s context is changing rapidly. In this panel, we want to discuss some of the research challenges in understanding context and in developing context-aware applications."
